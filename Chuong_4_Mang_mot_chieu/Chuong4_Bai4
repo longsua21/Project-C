@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Nhập số lượng phần tử của mảng: ");
+    scanf("%d", &n);
+    
+    int arr[n];
+    
+    // Nhập mảng
+    printf("Nhập các phần tử của mảng:\n");
+    for (int i = 0; i < n; i++) {
+        printf("Phần tử thứ %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+    
+    // Tìm phần tử lớn nhất và nhỏ nhất
+    int max = arr[0], min = arr[0];
+    int max_pos = 0, min_pos = 0;
+    
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+            max_pos = i;
+        }
+        if (arr[i] < min) {
+            min = arr[i];
+            min_pos = i;
+        }
+    }
+    
+    // In kết quả
+    printf("\nPhần tử lớn nhất trong mảng là %d tại vị trí %d\n", max, max_pos + 1);
+    printf("Phần tử nhỏ nhất trong mảng là %d tại vị trí %d\n", min, min_pos + 1);
+    
+    return 0;
+}
