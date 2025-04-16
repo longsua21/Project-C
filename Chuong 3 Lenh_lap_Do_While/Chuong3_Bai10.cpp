@@ -1,25 +1,30 @@
 #include <stdio.h>
 
 int main() {
-    int n, soDaoNguoc = 0;
+    int n, i;
+    long long f0 = 0, f1 = 1, fn;
 
     printf("Nhap so nguyen n: ");
     scanf("%d", &n);
 
-    int tam = n; 
-
     if (n < 0) {
-        printf("So am, khong xu ly dao nguoc!\n");
+        printf("Fibonacci khong xac dinh cho n < 0\n");
         return 0;
     }
 
-    while (n != 0) {
-        soDaoNguoc = soDaoNguoc * 10 + n % 10;
-        n /= 10;
+    if (n == 0) {
+        fn = 0;
+    } else if (n == 1) {
+        fn = 1;
+    } else {
+        for (i = 2; i <= n; i++) {
+            fn = f0 + f1;
+            f0 = f1;
+            f1 = fn;
+        }
     }
 
-    printf("So dao nguoc cua %d la: %d\n", tam, soDaoNguoc);
+    printf("Fibonacci F(%d) = %lld\n", n, fn);
 
     return 0;
 }
-
