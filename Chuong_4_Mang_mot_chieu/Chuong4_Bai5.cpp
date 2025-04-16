@@ -3,32 +3,32 @@
 int main() {
     int n, x, count = 0;
     
-    // Nh?p s? lu?ng ph?n t? c?a m?ng
-    printf("Nh?p s? lu?ng ph?n t? c?a m?ng: ");
+    // Nhập số lượng phần tử của mảng
+    printf("Nhập số lượng phần tử của mảng: ");
     scanf("%d", &n);
     
     int arr[n];
     
-    // Nh?p c�c ph?n t? c?a m?ng
-    printf("Nh?p c�c ph?n t? c?a m?ng:\n");
+    // Nhập các phần tử của mảng
+    printf("Nhập các phần tử của mảng:\n");
     for (int i = 0; i < n; i++) {
-        printf("Ph?n t? th? %d: ", i + 1);
+        printf("Phần tử thứ %d: ", i + 1);
         scanf("%d", &arr[i]);
     }
     
-    // Nh?p ph?n t? c?n d?m
-    printf("Nh?p ph?n t? x c?n d?m s? l?n xu?t hi?n: ");
+    // Nhập phần tử cần đếm
+    printf("Nhập phần tử x cần đếm số lần xuất hiện: ");
     scanf("%d", &x);
     
-    // �?m s? l?n xu?t hi?n c?a x
+    // Đếm số lần xuất hiện của x
     for (int i = 0; i < n; i++) {
         if (arr[i] == x) {
             count++;
         }
     }
     
-    // In k?t qu?
-    printf("Ph?n t? %d xu?t hi?n %d l?n trong m?ng.\n", x, count);
+    // In kết quả
+    printf("Phần tử %d xuất hiện %d lần trong mảng.\n", x, count);
     
     return 0;
 }
