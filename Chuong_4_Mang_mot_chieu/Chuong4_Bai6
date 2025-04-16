@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    
+    // Nhập số lượng phần tử của mảng
+    printf("Nhập số lượng phần tử của mảng: ");
+    scanf("%d", &n);
+    
+    int arr[n];
+    
+    // Nhập các phần tử của mảng
+    printf("Nhập các phần tử của mảng:\n");
+    for (int i = 0; i < n; i++) {
+        printf("Phần tử thứ %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+    
+    // In mảng ban đầu
+    printf("\nMảng ban đầu: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    
+    // Thay thế phần tử âm bằng 0
+    for (int i = 0; i < n; i++) {
+        if (arr[i] < 0) {
+            arr[i] = 0;
+        }
+    }
+    
+    // In mảng sau khi thay thế
+    printf("\nMảng sau khi thay thế số âm bằng 0: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    
+    return 0;
+}
