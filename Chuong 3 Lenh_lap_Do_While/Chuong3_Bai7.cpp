@@ -1,26 +1,22 @@
 #include <stdio.h>
 
 int main() {
-    int n, dem = 0;
+    int n, i;
+    float S = 0.0;
 
-    printf("Nhap so nguyen n: ");
+    printf("Nhap N: ");
     scanf("%d", &n);
 
-    int tam = n;
-
-    if (n == 0) {
-        dem = 1;
-    } else {
-        if (n < 0) n = -n;
-
-        while (n != 0) {
-            dem++;
-            n /= 10;
-        }
+    if (n <= 0) {
+        printf("Vui long nhap N > 0.\n");
+        return 0;
     }
 
-    printf("So %d co %d chu so.\n", tam, dem);
+    for (i = 1; i <= n; i++) {
+        S += 1.0 / i;
+    }
+
+    printf("Tong S = %.4f\n", S);
 
     return 0;
 }
-
