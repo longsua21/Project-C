@@ -1,28 +1,28 @@
 #include <stdio.h>
 
 int main() {
-    int n, soDaoNguoc = 0;
+    int n, binary[32], i = 0;
 
-    printf("Nhap so nguyen n: ");
+    printf("Nhap so nguyen duong: ");
     scanf("%d", &n);
 
-    if (n < 0) {
-        printf("So am khong duoc xem la doi xung.\n");
+    if (n <= 0) {
+        printf("Vui long nhap so > 0\n");
         return 0;
     }
 
-    int tam = n; 
-
-    while (tam != 0) {
-        soDaoNguoc = soDaoNguoc * 10 + tam % 10;
-        tam /= 10;
+    // Lưu phần dư vào mảng
+    while (n > 0) {
+        binary[i] = n % 2;
+        n /= 2;
+        i++;
     }
 
-    if (soDaoNguoc == n)
-        printf("%d la so doi xung.\n", n);
-    else
-        printf("%d khong phai la so doi xung.\n", n);
+    printf("Dang nhi phan: ");
+    for (int j = i - 1; j >= 0; j--) {
+        printf("%d", binary[j]);
+    }
+    printf("\n");
 
     return 0;
 }
-
