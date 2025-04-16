@@ -2,27 +2,31 @@
 #include <math.h>
 
 int main() {
-    int n, i, laSNT = 1;
+    int n, i;
+    double x, tu, mau, sinx = 0.0;
+    int dau = 1;
 
-    printf("Nhap so nguyen n: ");
+    printf("Nhap x (radian): ");
+    scanf("%lf", &x);
+    printf("Nhap so luong so hang n: ");
     scanf("%d", &n);
 
-    if (n < 2) {
-        laSNT = 0;
-    } else {
-        for (i = 2; i <= sqrt(n); i++) {
-            if (n % i == 0) {
-                laSNT = 0;
-                break;
-            }
+    for (i = 0; i < n; i++) {
+        int mu = 2 * i + 1;
+
+        tu = pow(x, mu);        // x^mu
+        mau = 1;
+
+        for (int j = 1; j <= mu; j++) {
+            mau *= j;           // tính giai thừa
         }
+
+        sinx += dau * (tu / mau); // cộng/trừ xen kẽ
+        dau *= -1;                // đổi dấu
     }
 
-    if (laSNT)
-        printf("%d la so nguyen to.\n", n);
-    else
-        printf("%d khong phai la so nguyen to.\n", n);
+    printf("Gia tri gan dung sin(%.2lf) = %.6lf\n", x, sinx);
+    printf("Gia tri sin tu math.h = %.6lf\n", sin(x)); // kiểm chứng
 
     return 0;
 }
-
