@@ -1,21 +1,22 @@
 #include <stdio.h>
 
 int main() {
-    int n, i, tong = 0, dem = 0;
+    int n, i;
+    long long giaithua = 1;
 
     printf("Nhap so nguyen n: ");
     scanf("%d", &n);
 
-    for (i = 1; i <= n; i++) {
-        if (i % 3 == 0 && i % 2 != 0) {
-            tong += i;
-            dem++;
-        }
+    if (n < 0) {
+        printf("Khong tinh giai thua cho so am.\n");
+        return 0;
     }
 
-    printf("Co %d so chia het cho 3 nhung khong chia het cho 2 trong khoang tu 1 den %d.\n", dem, n);
-    printf("Tong cua cac so do la: %d\n", tong);
+    for (i = 1; i <= n; i++) {
+        giaithua *= i;
+    }
+
+    printf("%d! = %lld\n", n, giaithua);
 
     return 0;
 }
-
