@@ -5,11 +5,11 @@ int main() {
     int tong = 0, tongDuong = 0, tongAm = 0;
     int demDuong = 0, demAm = 0;
 
-    // Nh?p s? ph?n t?
+    // Nhập số phần tử
     printf("Nhap so luong phan tu: ");
     scanf("%d", &n);
 
-    // Nh?p m?ng
+    // Nhập mảng
     for (int i = 0; i < n; i++) {
         printf("arr[%d] = ", i);
         scanf("%d", &arr[i]);
@@ -25,7 +25,7 @@ int main() {
         }
     }
 
-    // In k?t qu?
+    // In kết quả
     printf("\nTong cac phan tu: %d\n", tong);
     printf("Tong cac so duong: %d\n", tongDuong);
     printf("Tong cac so am: %d\n", tongAm);
@@ -44,4 +44,3 @@ int main() {
 
     return 0;
 }
-
